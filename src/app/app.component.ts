@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ingresosapp';
+
+  constructor(public authService:AuthService){
+
+  }
+
+  ngOnInit(){
+    this.authService.initAuthListener();
+  }
+
 }
